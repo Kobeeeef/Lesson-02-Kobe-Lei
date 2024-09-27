@@ -17,7 +17,8 @@ cursor = conn.cursor()
 # Execute the query, call the display() function, run the file, and open tables.html with Live Server
 
 # Query to retrieve 5 pets starting from rowid 11
-cursor.execute("SELECT * FROM pets LIMIT 5 OFFSET 10")
+query = "SELECT * FROM pets LIMIT 5 OFFSET 10"
+cursor.execute(query)
 display(cursor)
 
 # Exercise 3

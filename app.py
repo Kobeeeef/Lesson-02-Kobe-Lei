@@ -16,7 +16,8 @@ conn = sqlite3.connect("food.db")
 cursor = conn.cursor()
 
 # Execute SELECT * query to retrieve all records
-cursor.execute("SELECT * FROM food")
+query = "SELECT * FROM food"
+cursor.execute(query)
 display(cursor)
 
 # Exercise 2
@@ -30,11 +31,13 @@ display(cursor)
 # Check output on tables.html
 
 # Query to retrieve 5 rows
-cursor.execute("SELECT * FROM food LIMIT 5")
+query = "SELECT * FROM food LIMIT 5"
+cursor.execute(query)
 display(cursor)
 
 # Query to retrieve 5 rows starting at row 500
-cursor.execute("SELECT * FROM food LIMIT 5 OFFSET 500")
+query = "SELECT * FROM food LIMIT 5 OFFSET 500"
+cursor.execute(query)
 display(cursor)
 
 # Exercise 3
@@ -49,11 +52,13 @@ display(cursor)
 # *In SQLite3, the index column, or Primary Key, is called rowid
 
 # Part 1: Query ordered by Name limited to 10
-cursor.execute("SELECT * FROM food ORDER BY Name LIMIT 10")
+query = "SELECT * FROM food ORDER BY Name LIMIT 10"
+cursor.execute(query)
 display(cursor)
 
 # Part 2: Query ordered by rowid in descending order limited to 10
-cursor.execute("SELECT * FROM food ORDER BY rowid DESC LIMIT 10")
+query = "SELECT * FROM food ORDER BY rowid DESC LIMIT 10"
+cursor.execute(query)
 display(cursor)
 
 # Exercise 4
@@ -67,11 +72,13 @@ display(cursor)
 # Check the output
 
 # Part 1: Query to retrieve food names
-cursor.execute("SELECT Name FROM food")
+query = "SELECT Name FROM food"
+cursor.execute(query)
 display(cursor)
 
 # Part 2: Query to retrieve food names and species, limited to 20
-cursor.execute("SELECT Name, Species FROM food LIMIT 20")
+query = "SELECT Name, Species FROM food LIMIT 20"
+cursor.execute(query)
 display(cursor)
 
 # Exercise 5: Get the name and species of all of the nuts
@@ -81,7 +88,8 @@ display(cursor)
 # and check output on tables.html
 
 # Query to retrieve names and species of nuts
-cursor.execute("SELECT Name, Species FROM food WHERE \"Group\" = \"Nuts\"")
+query = "SELECT Name, Species FROM food WHERE \"Group\" = \"Nuts\""
+cursor.execute(query)
 display(cursor)
 
 # Exercise 6: Get all of the onions and herbs
@@ -91,5 +99,6 @@ display(cursor)
 # and check output on tables.html
 
 # Query to retrieve all herbs and onions
-cursor.execute("SELECT * FROM food WHERE Subgroup = \"Herbs\" OR Subgroup = \"Onions\"")
+query = "SELECT * FROM food WHERE Subgroup = \"Herbs\" OR Subgroup = \"Onions\""
+cursor.execute(query)
 display(cursor)
