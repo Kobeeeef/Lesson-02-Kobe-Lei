@@ -30,9 +30,11 @@ display(cursor)
 # and check output on tables.html
 
 # Query to retrieve name and age from the people table
-cursor.execute("SELECT name, age FROM people")
+query = "SELECT name, age FROM people"
+cursor.execute(query)
 display(cursor)
 # Query to retrieve name and age, ordered from youngest to oldest
+query = "SELECT name, age FROM people ORDER BY age ASC"
 cursor.execute("SELECT name, age FROM people ORDER BY age ASC")
 display(cursor)
 
@@ -44,7 +46,8 @@ display(cursor)
 # and check output on tables.html
 
 # Query to retrieve rowid and name, ordered in reverse alphabetical order
-cursor.execute("SELECT rowid, name FROM people ORDER BY name DESC")
+query = "SELECT rowid, name FROM people ORDER BY name DESC"
+cursor.execute(query)
 display(cursor)
 
 # Exercise 5
@@ -53,7 +56,8 @@ display(cursor)
 # and check output on tables.html
 
 # Query to retrieve all cats from the pets table
-cursor.execute('SELECT * FROM pets WHERE type = "Cat"')
+query = 'SELECT * FROM pets WHERE type = "Cat"'
+cursor.execute(query)
 display(cursor)
 
 # Exercise 6
@@ -63,6 +67,7 @@ display(cursor)
 # and check output on tables.html
 
 # Query to retrieve first and last names of all senators from the politicians table
-cursor.execute("SELECT first_name, last_name FROM politicians WHERE position = 'Senator'")
+query = "SELECT first_name, last_name FROM politicians WHERE position = 'Senator'"
+cursor.execute(query)
 display(cursor)
 
