@@ -35,7 +35,7 @@ cursor.execute(query)
 display(cursor)
 # Query to retrieve name and age, ordered from youngest to oldest
 query = "SELECT name, age FROM people ORDER BY age ASC"
-cursor.execute("SELECT name, age FROM people ORDER BY age ASC")
+cursor.execute(query)
 display(cursor)
 
 # Exercise 4
@@ -70,4 +70,3 @@ display(cursor)
 query = "SELECT first_name, last_name FROM politicians WHERE position = 'Senator'"
 cursor.execute(query)
 display(cursor)
-
